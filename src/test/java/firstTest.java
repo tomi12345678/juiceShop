@@ -32,8 +32,8 @@ public class firstTest extends DriverManager {
         homePagePO.openLoginPage();
         Thread.sleep(1000);
         loginPO.loginValidUser();
-//        Thread.sleep(3000);
-        Assert.assertEquals(5, 10);
+        Thread.sleep(3000);
+//        Assert.assertEquals(5, 10);
 //        reportingManager.logTestStatus("pass", "you did it");
     }
 
