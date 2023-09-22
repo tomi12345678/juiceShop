@@ -41,4 +41,10 @@ public class LoginPO {
         passwordField.sendKeys(password);
         loginButtonConfirmation.click();
     }
+
+    public void simpleSQLInjection() {
+        emailField.sendKeys("' OR '1' = '1' -- ");
+        passwordField.sendKeys("aaa123");
+        loginButtonConfirmation.click();
+    }
 }

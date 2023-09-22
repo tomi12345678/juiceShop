@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name = "frstTest">
-
-    <test name = "firstTest">
+<suite name = "Login test">
+    <listeners>
+        <listener class-name="listeners.ScreenshotListener"/>
+    </listeners>
+    <test name = "loginTest">
         <classes>
-            <class name = "firstTest"/>
+            <class name = "loginTest"/>
+<!--            <class name = "secondTest"/>-->
         </classes>
     </test>
 </suite>
