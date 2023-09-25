@@ -3,7 +3,7 @@ target/
 !**/src/main/**/target/
 !**/src/setup.setWebDriver/**/target/
 reports/
-src/main/resources/application.properties
+#src/main/resources/application.properties
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
