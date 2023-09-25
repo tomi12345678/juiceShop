@@ -2,7 +2,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjectModel.HomePagePO;
-import pageObjectModel.LoginPO;
 import setup.DriverManager;
 import setup.Waiter;
 
@@ -17,7 +16,6 @@ public class bonusPayloadTest extends DriverManager {
     public void setUp() {
         driver = getDriver();
         homePagePO = new HomePagePO(driver);
-        LoginPO loginPO = new LoginPO(driver);
     }
 
     // Test that search is exploitable by inserting an iframe and play some nice tunes

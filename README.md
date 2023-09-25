@@ -25,6 +25,7 @@ Additional features
 
 <h2>
 TODO
+also explain driver manager 
 screenshots, waiters, app.properties, missing stuff (docker, reporting tool, logging tool, jenkins)
 </h2>
 

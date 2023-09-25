@@ -7,5 +7,7 @@
         <suite-file path="login.xml"/>
         <suite-file path="scoreBoard.xml"/>
         <suite-file path="domXSS.xml"/>
+        <suite-file path="bonusPayload.xml"/>
+
     </suite-files>
 </suite>
