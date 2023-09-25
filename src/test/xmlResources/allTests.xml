@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name = "All tests suite">
+    <listeners>
+        <listener class-name="listeners.ScreenshotListener"/>
+    </listeners>
+    <suite-files>
+        <suite-file path="login.xml"/>
+        <suite-file path="scoreBoard.xml"/>
+        <suite-file path="domXSS.xml"/>
+    </suite-files>
+</suite>

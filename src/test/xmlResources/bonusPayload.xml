@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name = "Bonus payload test">
+    <listeners>
+        <listener class-name="listeners.ScreenshotListener"/>
+    </listeners>
+    <test name = "Bonus Payload Test">
+        <classes>
+            <class name = "bonusPayloadTest"/>
+        </classes>
+    </test>
+</suite>

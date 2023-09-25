@@ -10,6 +10,8 @@ public class ScreenshotListener extends TestListenerAdapter {
 
     private WebDriver driver;
 
+
+    // When test result is failure, capture
     @Override
     public void onTestFailure(ITestResult result) {
         String testName = result.getName();

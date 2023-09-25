@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name = "Login test">
+    <listeners>
+        <listener class-name="listeners.ScreenshotListener"/>
+    </listeners>
+    <test name = "loginTest">
+        <classes>
+            <class name = "loginTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name = "Login test">
+<suite name = "DOM XSS test">
     <listeners>
         <listener class-name="listeners.ScreenshotListener"/>
     </listeners>
-    <test name = "loginTest">
+    <test name = "DOM XSS Test">
         <classes>
-            <class name = "loginTest"/>
-<!--            <class name = "secondTest"/>-->
+            <class name = "domXSSTest"/>
         </classes>
     </test>
 </suite>

@@ -23,6 +23,9 @@ public class LoginPO {
     @Getter
     @FindBy (id = "loginButton")
     WebElement loginButtonConfirmation;
+    @Getter
+    @FindBy (css = "a[class = 'primary-link'")
+    WebElement registrationPageButton;
 
 
     public LoginPO(WebDriver driver){
@@ -31,7 +34,7 @@ public class LoginPO {
          configFileReader = new ConfigFileReader();
     }
 
-    //Logs in user with valid credentials
+    // Logs in user with valid credentials
     public void loginValidUser() {
         Properties properties = configFileReader.readProperties();
         String email = properties.getProperty("email");
@@ -42,6 +45,7 @@ public class LoginPO {
         loginButtonConfirmation.click();
     }
 
+    // Try and login using an SQL injection that bypasses valid credentials check
     public void simpleSQLInjection() {
         emailField.sendKeys("' OR '1' = '1' -- ");
         passwordField.sendKeys("aaa123");

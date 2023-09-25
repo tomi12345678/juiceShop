@@ -5,11 +5,7 @@ import java.util.Properties;
 
 public class ConfigFileReader {
 
-    public ConfigFileReader()  {
-    }
-
     // Load properties from application.properties file in the classpath
-
     public Properties readProperties() {
         try {
             Properties properties = new Properties();

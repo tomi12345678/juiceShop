@@ -1,40 +1,32 @@
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageObjectModel.HomePagePO;
 import pageObjectModel.LoginPO;
 import setup.DriverManager;
+import setup.Waiter;
 
-public class secondTest extends DriverManager {
+public class domXSSTest extends DriverManager {
 
     private HomePagePO homePagePO;
-    private DriverManager driverManager;
-    private LoginPO loginPO;
     private WebDriver driver;
 
 
     @BeforeMethod
     //Method to set up driver and instantiate page object instances before every test
     public void setUp() {
-//        driverManager = new DriverManager();
         driver = getDriver();
         homePagePO = new HomePagePO(driver);
-        loginPO = new LoginPO(driver);
+        LoginPO loginPO = new LoginPO(driver);
     }
 
+    // Test that site is vulnerable to simple DOM XSS attacks
     @Test
-    public void loginSQLInjectionTest() {
+    public void domXSSAttackTest() {
         driver.get("https://juice-shop.herokuapp.com/#/");
-        homePagePO.openLoginPage();
-        loginPO.simpleSQLInjection();
-        homePagePO.verifyUserIsLoggedIn();
+        homePagePO.dismissPopup();
+        homePagePO.searchFunction("<iframe src='javascript:alert(`xss`)'>");
+        Waiter.waitForAlertAndAccept(driver, 5);
+        System.out.println("Site is vulnerable to DOM XSS attacks.");
     }
-
-//    @AfterMethod
-//    public void tearDown(){
-//        quitDriver();
-//    }
 }
