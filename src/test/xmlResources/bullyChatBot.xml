@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name = "Score board test">
+<suite name = "Bully chatBot test">
     <listeners>
         <listener class-name="listeners.ScreenshotListener"/>
     </listeners>
-    <test name = "ScoreBoardTest">
+    <test name = "BullyChatBotTest">
         <classes>
-            <class name = "scoreBoardTest"/>
+            <class name = "bullyChatbotTest"/>
         </classes>
     </test>
 </suite>

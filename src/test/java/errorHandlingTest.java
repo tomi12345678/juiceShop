@@ -1,11 +1,12 @@
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjectModel.HomePagePO;
 import setup.DriverManager;
-import setup.Waiter;
 
-public class domXSSTest extends DriverManager {
+public class errorHandlingTest extends DriverManager {
 
     private HomePagePO homePagePO;
     private WebDriver driver;
@@ -16,15 +17,16 @@ public class domXSSTest extends DriverManager {
     public void setUp() {
         driver = getDriver();
         homePagePO = new HomePagePO(driver);
+        RestAssured.baseURI = "https://juice-shop.herokuapp.com";
     }
 
-    // Test that site is vulnerable to simple DOM XSS attacks
-    @Test
-    public void domXSSAttackTest() {
+    // Send a GET request for a non-existing link and assert it is not handled
+    @Test()
+    public void reachUnhandledErrorTest() {
         driver.get("https://juice-shop.herokuapp.com/#/");
         homePagePO.dismissPopup();
-        homePagePO.searchFunction("<iframe src='javascript:alert(`xss`)'>");
-        Waiter.waitForAlertAndAccept(driver, 5);
-        System.out.println("Site is vulnerable to DOM XSS attacks.");
+        Response response = RestAssured.get("/rest/43y0071 HTTP/1.1");
+        System.out.println(response.getStatusLine());
+        assert response.getStatusLine().contains("500 Internal Server Error");
     }
 }

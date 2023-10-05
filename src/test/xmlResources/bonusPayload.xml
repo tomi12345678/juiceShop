@@ -3,7 +3,7 @@
     <listeners>
         <listener class-name="listeners.ScreenshotListener"/>
     </listeners>
-    <test name = "Bonus Payload Test">
+    <test name = "BonusPayloadTest">
         <classes>
             <class name = "bonusPayloadTest"/>
         </classes>

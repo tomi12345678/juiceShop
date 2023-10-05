@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name = "DOM XSS test">
+<suite name = "DOM xss test">
     <listeners>
         <listener class-name="listeners.ScreenshotListener"/>
     </listeners>
-    <test name = "DOM XSS Test">
+    <test name = "DomXssTest">
         <classes>
             <class name = "domXSSTest"/>
         </classes>

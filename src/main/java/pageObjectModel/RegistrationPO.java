@@ -47,7 +47,13 @@ public class RegistrationPO {
     }
 
     //Logs in user with valid credentials
-    public void registerUser() {
+    public void clickRegisterAndAssertRegistration() {
+        registerButton.click();
+        Waiter.pause(2000);
+        assert driver.getCurrentUrl().contains("login");
+    }
+
+    public void enterRegistrationData() {
         Waiter.waitUntilElementIsClickable(driver, loginPO.getRegistrationPageButton(), 2);
         loginPO.getRegistrationPageButton().click();
         Properties properties = configFileReader.readProperties();
@@ -62,6 +68,5 @@ public class RegistrationPO {
         Waiter.waitUntilElementIsClickable(driver, registerSecurityQuestionOption, 2);
         registerSecurityQuestionOption.click();
         registerAnwserField.sendKeys(securityAnswer);
-        registerButton.click();
     }
 }

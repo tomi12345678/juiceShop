@@ -14,6 +14,16 @@ import java.time.Duration;
 @UtilityClass
 public class Waiter {
 
+
+    public static void pause (int timeoutInMiliSeconds) {
+        try {
+            Thread.sleep(timeoutInMiliSeconds);
+        }
+        catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
     public static void waitUntilElementIsVisible (WebDriver webDriver, WebElement webElement, int timeoutInSeconds) {
         try {
             WebDriverWait waiter = new WebDriverWait(webDriver, Duration.ofSeconds(timeoutInSeconds));

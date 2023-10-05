@@ -10,8 +10,8 @@ public class scoreBoardTest extends DriverManager {
     private WebDriver driver;
 
 
-    @BeforeMethod
     // Method to set up driver and instantiate page object instances before every test
+    @BeforeMethod
     public void setUp() {
         driver = getDriver();
         homePagePO = new HomePagePO(driver);

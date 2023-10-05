@@ -3,7 +3,7 @@
     <listeners>
         <listener class-name="listeners.ScreenshotListener"/>
     </listeners>
-    <test name = "loginTest">
+    <test name = "LoginTest">
         <classes>
             <class name = "loginTest"/>
         </classes>

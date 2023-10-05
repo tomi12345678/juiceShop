@@ -2,12 +2,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjectModel.HomePagePO;
+import pageObjectModel.LoginPO;
 import setup.DriverManager;
-import setup.Waiter;
 
-public class domXSSTest extends DriverManager {
+public class privacyPolicyTest extends DriverManager {
 
     private HomePagePO homePagePO;
+    private LoginPO loginPO;
     private WebDriver driver;
 
 
@@ -16,15 +17,19 @@ public class domXSSTest extends DriverManager {
     public void setUp() {
         driver = getDriver();
         homePagePO = new HomePagePO(driver);
+        loginPO = new LoginPO(driver);
     }
 
-    // Test that site is vulnerable to simple DOM XSS attacks
+
+    // Navigate to the privacy policy page and assert it is open properly
     @Test
-    public void domXSSAttackTest() {
+    public void privacyPolicyPageTest() {
         driver.get("https://juice-shop.herokuapp.com/#/");
         homePagePO.dismissPopup();
-        homePagePO.searchFunction("<iframe src='javascript:alert(`xss`)'>");
-        Waiter.waitForAlertAndAccept(driver, 5);
-        System.out.println("Site is vulnerable to DOM XSS attacks.");
+        homePagePO.openLoginPage();
+        loginPO.loginValidUser();
+        homePagePO.verifyUserIsLoggedIn();
+        homePagePO.openPrivacyPolicyPage();
+        assert driver.getCurrentUrl().contains("/privacy-security/privacy-policy");
     }
 }

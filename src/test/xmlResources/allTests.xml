@@ -8,6 +8,13 @@
         <suite-file path="scoreBoard.xml"/>
         <suite-file path="domXSS.xml"/>
         <suite-file path="bonusPayload.xml"/>
-
+        <suite-file path="bullyChatBot.xml"/>
+        <suite-file path="errorHandling.xml"/>
+        <suite-file path="confidentialDocument.xml"/>
+        <suite-file path="exposedMetrics.xml"/>
+        <suite-file path="missingEncodingTest.xml"/>
+        <suite-file path="privacyPolicy.xml"/>
+        <suite-file path="repetitiveRegistration.xml"/>
+        <suite-file path="zeroStarsTest.xml"/>
     </suite-files>
 </suite>

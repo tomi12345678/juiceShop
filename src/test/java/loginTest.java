@@ -14,8 +14,8 @@ public class loginTest extends DriverManager {
     private WebDriver driver;
 
 
+    // Method to set up driver and instantiate page object instances before every test
     @BeforeMethod
-    //Method to set up driver and instantiate page object instances before every test
     public void setUp() {
         driver = getDriver();
         homePagePO = new HomePagePO(driver);
@@ -33,7 +33,8 @@ public class loginTest extends DriverManager {
             homePagePO.verifyUserIsLoggedIn();
         }
         catch (TimeoutException e) {
-            registrationPO.registerUser();
+            registrationPO.enterRegistrationData();
+            registrationPO.clickRegisterAndAssertRegistration();
             loginPO.loginValidUser();
         }
         homePagePO.verifyUserIsLoggedIn();
